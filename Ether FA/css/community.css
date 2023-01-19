@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap");
+
+* {
+  user-select: none;
+}
+
+body {
+  background: rgb(20, 20, 20);
+  font-family: "Bebas Neue", cursive;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----------NAVIGATION---------- */
+
+/* ----------NAVIGATION---------- */
+
+nav {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+}
+
+.nav img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+  border-radius: 100%;
+  margin-left: 10px;
+  border: 1px solid whitesmoke;
+}
+
+.logo {
+  width: 0%;
+  box-shadow: none;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  padding-right: 330px;
+}
+
+.nav ul a {
+  text-decoration: none;
+  color: rgb(247, 247, 247);
+  font-size: 25px;
+  background: rgba(1, 1, 1, 0.605);
+  border-radius: 10px;
+  width: 175px;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 0 20px 5px #ffffffcb;
+  letter-spacing: 2.5px;
+}
+
+li {
+  display: flex;
+  margin: 5px 25px;
+}
+
+/* ----------ANIMATION IMG NAV---------- */
+
+.nav img {
+  transition: transform 1s;
+}
+
+.nav img:hover {
+  transform: rotate(360deg);
+}
+
+.nav a {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.738);
+  color: rgb(0, 0, 0);
+}
+
+.nav a:active {
+  transform: scale(1.15);
+  transition: 0.5s;
+}
+
+/* ------WL----- */
+
+section.WL {
+  height: 100vh;
+  width: 100%;
+}
+
+/* PART 1 */
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin-bottom: 200px;
+}
+
+img {
+  height: 550px;
+}
+
+.container h2 {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+  text-shadow: rgb(0, 127, 254) 1px 2px 20px;
+  margin: 0;
+}
+
+.log1,
+.log2 {
+  width: 250px;
+  height: 250px;
+  border: 1px solid whitesmoke;
+  border-radius: 100%;
+  margin: 50px;
+}
+
+.log1 {
+  box-shadow: 0 0 20px 10px #0e53e4;
+}
+
+.log2 {
+  box-shadow: 0 0 20px 10px #e80d0d;
+}
+
+/* PART 2 */
+
+section.role {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4rem;
+  text-shadow: rgb(0, 127, 254) 1px 2px 20px;
+  color: rgb(255, 255, 255);
+  margin: 0;
+  text-align: center;
+}
+
+section.role h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  text-align: start;
+}
+
+section.role p {
+  color: white;
+  font-size: 1rem;
+  text-align: start;
+  margin: 0;
+  width: 100vh;
+}
+
+.r1,
+.r2,
+.r3,
+.r4,
+.r5,
+.r6,
+.r7,
+.r8,
+.r9,
+.r10 {
+  display: flex;
+  flex-direction: row;
+}
+
+.r1,
+.r2,
+.r3,
+.r4,
+.r5,
+.r6,
+.r7,
+.r8,
+.r9,
+.r10,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.r1 h2 {
+  color: #000000;
+}
+
+.r2 h2 {
+  color: pink;
+}
+
+.r3 h2 {
+  color: red;
+}
+
+.r4 h2 {
+  color: rgb(255, 183, 2);
+}
+
+.r5 h2 {
+  color: rgb(58, 63, 65);
+}
+
+.r9 h2 {
+  color: purple;
+}
+
+.r10 h2 {
+  color: lightblue;
+}
+
+.r6 h2 {
+  color: #0e53e4;
+}
+
+.r7 h2 {
+  color: skyblue;
+}
+
+.r8 h2 {
+  color: green;
+}
+
+.picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  display: grid;
+  justify-content: start;
+  align-items: center;
+  width: 20% 80%;
+}

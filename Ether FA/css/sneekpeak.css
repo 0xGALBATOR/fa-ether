@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap");
+
+* {
+  user-select: none;
+}
+
+body {
+  background: rgb(20, 20, 20);
+  font-family: "Bebas Neue", cursive;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----------NAVIGATION---------- */
+
+nav {
+  position: absolute;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+}
+
+.nav img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+  border-radius: 100%;
+  margin-left: 10px;
+  border: 1px solid whitesmoke;
+}
+
+.logo {
+  width: 0%;
+  box-shadow: none;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  padding-right: 330px;
+}
+
+.nav ul a {
+  text-decoration: none;
+  color: rgb(247, 247, 247);
+  font-size: 25px;
+  background: rgba(1, 1, 1, 0.605);
+  border-radius: 10px;
+  width: 175px;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 0 20px 5px #ffffffcb;
+  letter-spacing: 2.5px;
+}
+
+.nav li {
+  display: flex;
+  margin: 5px 25px;
+}
+
+/* ----------ANIMATION IMG NAV---------- */
+
+.nav img {
+  transition: transform 1s;
+}
+
+.nav img:hover {
+  transform: rotate(360deg);
+}
+
+.nav a {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.738);
+  color: rgb(0, 0, 0);
+}
+
+.nav a:active {
+  transform: scale(1.15);
+  transition: 0.5s;
+}
+
+/* ----------REFERENCE---------- */
+
+.ref,
+.ref2 {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+/* -----PART 1----- */
+.sneek {
+  position: absolute;
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.container h2 {
+  margin: 80px 0 0 0;
+  height: 120px;
+  font-size: 6.5rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: rgb(0, 127, 254) 1px 2px 20px;
+}
+
+.container img {
+  height: 210px;
+  width: 210px;
+  border-radius: 10%;
+  margin: 5px;
+  transition: 0.25s ease;
+}
+
+img:hover {
+  transform: scale(1.18);
+  transition: 1.5s;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.card-container {
+  margin-top: 35px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas:
+    "a b c d e f"
+    "g h i j k l"
+    "m n o p q r";
+}
+
+/* -----PART 2----- */
+
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 500px;
+}
+
+.card-container2 {
+  display: grid;
+  grid-template-areas: "a b";
+}
+
+.card-container2 img {
+  width: 710px;
+  height: 340px;
+  border-radius: 30px;
+  margin-top: px;
+}
+
+h4 {
+  color: aliceblue;
+  text-shadow: rgb(0, 164, 252) 1px 2px 20px;
+  font-family: "Uncial Antiqua", cursive;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.container2 h2 {
+  margin: 45px 0 0px 0px;
+  width: 100%;
+  font-size: 6.5rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: rgb(0, 127, 254) 1px 2px 20px;
+}
+
+.imgg {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgd {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__bg__image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--image-translate-offset, 0));
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: blur(10px);
+}
+.app__bg__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.app__bg__image.current--image {
+  opacity: 1;
+  --image-translate-offset: 0;
+}

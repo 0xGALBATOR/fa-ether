@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+  font-family: "Bebas Neue", cursive;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* VIDEO */
+
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+h1,
+h2,
+#btnVideo {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 10rem;
+  border-radius: 15px;
+  width: 100%;
+  text-shadow: rgb(0, 127, 254) 1px 2px 20px;
+  letter-spacing: 10px;
+}
+
+#btnVideo {
+  font-size: 1.5rem;
+  background: 0;
+  border: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border-radius: 7px;
+}
+
+h2 {
+  font-size: 2rem;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.title {
+  margin-top: 10px;
+  position: fixed;
+}
+
+.me {
+  padding-top: 900px;
+}
+
+/* ----------NAVIGATION---------- */
+
+nav {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+}
+
+.nav img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+  border-radius: 100%;
+  margin-left: 10px;
+  border: 1px solid whitesmoke;
+}
+
+.logo {
+  width: 0%;
+  box-shadow: none;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  padding-right: 330px;
+}
+
+.nav ul a {
+  text-decoration: none;
+  color: rgb(247, 247, 247);
+  font-size: 25px;
+  background: rgba(1, 1, 1, 0.605);
+  border-radius: 10px;
+  width: 175px;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 0 20px 5px #ffffffcb;
+  letter-spacing: 2.5px;
+}
+
+li {
+  display: flex;
+  margin: 5px 25px;
+}
+
+/* ----------ANIMATION IMG NAV---------- */
+
+.nav img {
+  transition: transform 1s;
+}
+
+.nav img:hover {
+  transform: rotate(360deg);
+}
+.nav a {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.738);
+  color: rgb(0, 0, 0);
+}
+
+.nav a:active {
+  transform: scale(1.15);
+  transition: 0.5s;
+}

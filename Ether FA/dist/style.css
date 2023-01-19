@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+:root {
+  --card-width: 200px;
+  --card-height: 300px;
+  --card-transition-duration: 800ms;
+  --card-transition-easing: ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Bebas Neue", cursive;
+  user-select: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.787);
+  overflow: hidden;
+}
+
+/* ----------NAVIGATION---------- */
+
+nav {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 1%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+  border-radius: 100%;
+  margin-left: 10px;
+  border: 1px solid whitesmoke;
+}
+
+.logo {
+  width: 0%;
+  box-shadow: none;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  padding-right: 270px;
+}
+
+.nav ul a {
+  text-decoration: none;
+  color: rgb(247, 247, 247);
+  font-size: 25px;
+  background: rgba(1, 1, 1, 0.605);
+  border-radius: 10px;
+  width: 175px;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 0 20px 5px #ffffffcb;
+  letter-spacing: 2.5px;
+}
+
+.nav li {
+  display: flex;
+  margin: 5px 25px;
+}
+
+/* ----------ANIMATION IMG NAV---------- */
+
+.nav img {
+  transition: transform 1s;
+}
+
+.nav img:hover {
+  transform: rotate(360deg);
+}
+.nav a {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.738);
+  color: rgb(0, 0, 0);
+}
+
+.nav a:active {
+  transform: scale(1.15);
+  transition: 0.5s;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+  border: none;
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+}
+.app__bg::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 1;
+  opacity: 0;
+}
+.app__bg__image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--image-translate-offset, 0));
+  width: 100%;
+  height: 100%;
+  transition: transform 1000ms ease, opacity 1000ms ease;
+  overflow: hidden;
+}
+.app__bg__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.app__bg__image.current--image {
+  opacity: 1;
+  --image-translate-offset: 0;
+}
+.app__bg__image.previous--image,
+.app__bg__image.next--image {
+  opacity: 0;
+}
+.app__bg__image.previous--image {
+  --image-translate-offset: -50%;
+}
+.app__bg__image.next--image {
+  --image-translate-offset: 50%;
+}
+
+.cardList {
+  position: absolute;
+  width: calc(3 * var(--card-width));
+  height: auto;
+}
+.cardList__btn {
+  --btn-size: 35px;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+.cardList__btn.btn--left {
+  left: -80%;
+}
+.cardList__btn.btn--right {
+  right: -80%;
+}
+.cardList__btn .icon {
+  width: 150%;
+  height: 150%;
+}
+.cardList__btn .icon svg {
+  width: 120%;
+  height: 120%;
+}
+.cardList .cards__wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.card {
+  --card-translateY-offset: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--card-translateX-offset))
+    translateY(var(--card-translateY-offset)) scale(var(--card-scale-offset));
+  display: inline-block;
+  width: 1000px;
+  height: 600px;
+  transition: transform var(--card-transition-duration)
+    var(--card-transition-easing);
+  user-select: none;
+  margin-top: -10px;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 110%;
+  background: #000;
+  z-index: 1;
+  transition: opacity var(--card-transition-duration)
+    var(--card-transition-easing);
+  opacity: calc(1 - var(--opacity));
+  border-radius: 45px;
+}
+.card__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.card__image img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 110%;
+  object-fit: cover;
+  border-radius: 45px;
+}
+.card.current--card {
+  position: fixed;
+  z-index: 1;
+  --current-card-rotation-offset: 0;
+  --card-translateX-offset: 0;
+  --card-rotation-offset: var(--current-card-rotation-offset);
+  --card-scale-offset: 1.3;
+  --opacity: 0.9;
+}
+.card.previous--card {
+  --card-translateX-offset: calc(-1.5 * var(--card-width) * 1.5);
+  --card-rotation-offset: 50deg;
+}
+.card.next--card {
+  --card-translateX-offset: calc(var(--card-width) * 2.25);
+  --card-rotation-offset: -50deg;
+}
+.card.previous--card,
+.card.next--card {
+  --card-scale-offset: 0.9;
+  --opacity: 0.4;
+}
+
+.infoList {
+  position: absolute;
+  width: calc(3 * var(--card-width));
+  height: var(--card-height);
+  pointer-events: none;
+  padding-right: 2970px;
+  padding-top: 980px;
+}
+.infoList .info__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  padding-left: 400px;
+}
+
+.info {
+  margin-bottom: calc(var(--card-height) / 8);
+  margin-left: calc(var(--card-width) / 1.5);
+  transform: translateZ(2rem);
+  transition: transform var(--card-transition-duration)
+    var(--card-transition-easing);
+}
+.info .text {
+  position: relative;
+  font-family: "Montserrat";
+  font-size: calc(var(--card-width) * var(--text-size-offset, 0.2));
+  white-space: nowrap;
+  color: #fff;
+  text-shadow: rgb(0, 127, 254) 0px 0px 20px;
+  width: fit-content;
+}
+.info .name,
+.info .location {
+  text-transform: uppercase;
+}
+.info .location {
+  font-weight: 800;
+}
+.info .location {
+  --mg-left: 40px;
+  --text-size-offset: 0.12;
+  font-weight: 600;
+  margin-left: var(--mg-left);
+  margin-bottom: calc(var(--mg-left) / 2);
+  padding-bottom: 0.8rem;
+}
+.info .location::before,
+.info .location::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.758);
+  left: 0%;
+  transform: translate(calc(-1 * var(--mg-left)), -50%);
+}
+.info .location::before {
+  top: 50%;
+  width: 20px;
+  height: 5px;
+}
+.info .location::after {
+  bottom: 0;
+  width: 60px;
+  height: 2px;
+}
+.info .description {
+  --text-size-offset: 0.065;
+  font-weight: 500;
+}
+.info.current--info {
+  opacity: 1;
+  display: block;
+}
+.info.previous--info,
+.info.next--info {
+  opacity: 0;
+  display: none;
+}
+
+.loading__wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  z-index: 200;
+}
+.loading__wrapper .loader--text {
+  color: rgba(255, 255, 255, 0.902);
+  font-family: "Montserrat";
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+}
+.loading__wrapper .loader {
+  position: relative;
+  width: 200px;
+  height: 2px;
+  background: rgba(1, 1, 1, 0.25);
+}
+.loading__wrapper .loader span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.support {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px;
+  display: flex;
+}
+.support a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 1.8rem;
+  backface-visibility: hidden;
+  transition: all 150ms ease;
+}
+.support a:hover {
+  transform: scale(1.1);
+}

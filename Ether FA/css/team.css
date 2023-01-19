@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+  user-select: none;
+}
+
+body {
+  background: rgb(20, 20, 20);
+  font-family: "Bebas Neue", cursive;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+/* ----------NAVIGATION---------- */
+
+nav {
+  position: absolute;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  align-items: center;
+  width: 100%;
+}
+
+.nav img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+  border-radius: 100%;
+  margin-left: 10px;
+  border: 1px solid whitesmoke;
+}
+
+.logo {
+  width: 0%;
+  box-shadow: none;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  padding-right: 330px;
+}
+
+.nav ul a {
+  text-decoration: none;
+  color: rgb(247, 247, 247);
+  font-size: 25px;
+  background: rgba(1, 1, 1, 0.605);
+  border-radius: 10px;
+  width: 175px;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 0 20px 5px #ffffffcb;
+  letter-spacing: 2.5px;
+}
+
+.nav li {
+  display: flex;
+  margin: 5px 25px;
+}
+
+/* ----------ANIMATION IMG NAV---------- */
+
+.nav img {
+  transition: transform 1s;
+}
+
+.nav img:hover {
+  transform: rotate(360deg);
+}
+
+.nav a {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.738);
+  color: rgb(0, 0, 0);
+}
+
+.nav a:active {
+  transform: scale(1.15);
+  transition: 0.5s;
+}
+
+#our-team-section {
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  margin-bottom: 100px;
+}
+
+#our-team-title {
+  position: relative;
+  z-index: 6;
+  font-weight: 300;
+  margin-top: 5%;
+  margin-left: 37%;
+  font-size: 4vw;
+  color: #ffffff;
+  text-shadow: rgb(0, 127, 254) 1px 2px 20px;
+  font-size: 6.5rem;
+}
+
+#team-tile-container {
+  width: 90%;
+  margin-left: 5%;
+}
+
+#team-left-tile {
+  margin-top: 2.5%;
+  margin-left: 12%;
+  width: 34%;
+  float: left;
+  background-image: url(/img/blue2.png);
+  padding-bottom: 20%;
+  border-radius: 5px;
+  border-top: #00aeffe2 solid 5px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+#team-right-tile {
+  margin-top: 2.5%;
+  margin-right: 12%;
+  width: 34%;
+  float: right;
+  border-radius: 5px;
+  background-image: url(/img/red1.png);
+  padding-bottom: 20%;
+  border-top: #f84003ea solid 5px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.team-headshot {
+  width: 35%;
+  margin-top: 10%;
+  margin-left: 32.5%;
+  border-radius: 50%;
+}
+
+img:hover {
+  transform: scale(1.35);
+  transition: 1.5s;
+}
+
+.team-name-banner1,
+.team-name-banner2 {
+  position: absolute;
+  z-index: 6;
+  width: 20%;
+  margin-left: 5%;
+  margin-top: 0%;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-weight: 400;
+  font-size: 2.4vw;
+  color: #fafafa;
+}
+
+.team-name-banner2,
+.team-title-banner2 {
+  text-shadow: rgb(255, 0, 0) 1px 2px 20px;
+}
+.team-title-banner1,
+.team-name-banner1 {
+  text-shadow: rgb(0, 60, 255) 1px 2px 20px;
+}
+
+.team-title-banner1,
+.team-title-banner2 {
+  position: absolute;
+  z-index: 6;
+  width: 20%;
+  margin-left: 5%;
+  margin-top: 3%;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-weight: 400;
+  font-size: 1.8vw;
+  color: #fdfdfd;
+}
+
+.team-name-bio {
+  position: absolute;
+  z-index: 6;
+  width: 25%;
+  margin-left: 3.5%;
+  margin-top: 8%;
+  font-weight: 300;
+  font-size: 1.25vw;
+  text-align: center;
+  color: #ffffff;
+}
+
+.app__bg__image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--image-translate-offset, 0));
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: blur(10px);
+}
+.app__bg__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.app__bg__image.current--image {
+  opacity: 1;
+  --image-translate-offset: 0;
+}
